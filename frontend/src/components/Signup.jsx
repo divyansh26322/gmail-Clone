@@ -24,7 +24,7 @@ const changeHandler = (e) => {
 const submitHandler=async(e)=>{
   e.preventDefault();
   try{
-    const res = await axios.post("http://localhost:8080/api/v1/user/register",input,{
+    const res = await axios.post("https://gmail-clone-m0qq.onrender.com/api/v1/user/register",input,{
       headers:{
         'Content-Type':"application/json"
       },

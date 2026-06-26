@@ -9,7 +9,7 @@ import emailRoute from "./routes/email.route.js"
 dotenv.config({});
 
 connectDB();
-const PORT =  8080;
+const PORT = process.env.PORT || 8080;
 const app = express();
 
 //middleware
@@ -19,7 +19,10 @@ app.use(express.json());
 app.use(cookieParser());
 
  app.use(cors({
-    origin: "http://localhost:5173", // your frontend URL
+    origin: [
+        "http://localhost:5173",
+        "https://gmail-clone-fiysvp1j0-divyansh26322s-projects.vercel.app"
+    ],
     credentials: true
 }));
 
