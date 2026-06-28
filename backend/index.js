@@ -12,19 +12,18 @@ connectDB();
 const PORT = process.env.PORT || 8080;
 const app = express();
 
+app.use(cors({
+    origin: true,
+    credentials: true
+}));
+
 //middleware
 
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 app.use(cookieParser());
 
- app.use(cors({
-    origin: [
-        "http://localhost:5173",
-        "https://gmail-clone-fiysvp1j0-divyansh26322s-projects.vercel.app"
-    ],
-    credentials: true
-}));
+ 
 
 //routes
 app.use("/api/v1/user",userRoute)
